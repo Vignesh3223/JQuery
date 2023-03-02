@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Animation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#p1").click(function () {
+                var div = $("div");
+                div.animate({ height: '200px', opacity: '0.2' }, 3000);
+                div.animate({ width: '500px', opacity: '0.5' }, 4000);
+                div.animate({ height: '300px', opacity: '0.3' }, 5000);
+                div.animate({ width: '700px', opacity: '0.4' }, 6000);
+                div.fadeOut(2000);
+            })
+        })
+    </script>
+    <style>
+        div {
+            width: 40%;
+            font-size: x-large;
+            color: gold;
+            background-color: black;
+            text-align: center;
+            font-family: Times new roman;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        img {
+            display: block;
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+            background: #74ebd5;
+            background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
+            background: linear-gradient(to right, #ACB6E5, #74ebd5);
+        }
+    </style>
+
+</head>
+
+<body>
+    <p id="p1"
+        style="text-align: center;font-family: times new roman;font-style: italic;font-size: x-large;font-weight:bolder;">
+        Animate On Text</p>
+    <div>
+        jQuery is a fast, small, and feature-rich JavaScript library.
+    </div>
+    <p id="p2"
+        style="text-align: center;font-family: times new roman;font-style: italic;font-size: x-large;font-weight:bolder;">
+        Animate On Image</p>
+    <img src="">
+</body>
+
+</html>
