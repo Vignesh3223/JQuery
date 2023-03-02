@@ -22,10 +22,25 @@
     <style>
         #login {
             display: none;
+            color:brown;
+            text-align: center;
+            background-color: rgb(250, 173, 80);
+            font-family: Britannic;
+            font-size: larger;
+            font-weight: bolder;
         }
 
         #regform {
             display: none;
+            color:crimson;
+            text-align: center;
+            background-color: rgb(124, 243, 100);
+            font-family: Britannic;
+            font-size: larger;
+            font-weight: bolder;
+        }
+        body{
+            background-color: rgb(226, 238, 63);
         }
     </style>
 </head>
@@ -38,9 +53,9 @@
         <form method="post" action="">
             <h1 style="font-family: 'Times New Roman';text-align: center;">LOGIN CREDENTIALS</h1><br><br>
             <b>
-                Username :<input type="name" name="uname"><br><br>
-                Paasword :<input type="password" name="passwd"><br><br>
-                Confirm password :<input type="password" name="cmpasswd"><br><br>
+                Username <input type="name" name="uname"><br><br>
+                Paasword <input type="password" name="passwd"><br><br>
+                Confirm password <input type="password" name="cmpasswd"><br><br>
                 <input type="submit" value="Login">
                 <input type="reset" value="Clear">
             </b>
@@ -51,14 +66,14 @@
             <h1 style="font-family: 'Times New Roman';text-align: center;">REGISTRATION FORM</h1>
             <fieldset>
                 <legend>TRAINEE REGISTRATION</legend>
-                Firstname :<br> <input type="text" name="fname"><br><br>
-                Lastname :<br> <input type="text" name="lname"><br><br>
-                Email ID :<br> <input type="email" name="mail"><br><br>
-                Gender : <br> <input type="radio" name="gender" value="Female">Female<br>
-                <input type="radio" name="gender" value="Male">Male<br><br>
-                Address : <br> <textarea name="addr"></textarea><br><br>
-                DOB : <br> <input type="date" name="date"><br><br>
-                Profession :<br> <select name="profession">
+                Firstname : <input type="text" name="fname"><br><br>
+                Lastname : <input type="text" name="lname"><br><br>
+                Email ID : <input type="email" name="mail"><br><br>
+                Gender :  <input type="radio" name="gender" value="Female">Female
+                        <input type="radio" name="gender" value="Male">Male<br><br>
+                Address :  <textarea name="addr"></textarea><br><br>
+                DOB :  <input type="date" name="date"><br><br>
+                Profession : <select name="profession">
                     <option></option>
                     <optgroup label="Developer">
                         <option>Front-end Developer</option>
@@ -70,8 +85,8 @@
                         <option>Manager</option>
                     </optgroup>
                 </select><br><br>
-                Mobile number :<br> <input type="tel" pattern="[0-9]{10}" name="mob"><br><br>
-                Telephone number :<br> <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}" name="tele"><br><br>
+                Mobile number : <input type="tel" pattern="[0-9]{10}" name="mob"><br><br>
+                Telephone number : <input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}" name="tele"><br><br>
                 <input type="submit" value="Register" >
                 <input type="reset" value="Clear">
             </fieldset>
