@@ -19,45 +19,73 @@
             })
         })
     </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#one").animate({ 
+                    left: '550px',
+                    opacity: '0.5',
+                    height : '250px',
+                    width:'300px'
+                })
+            })
+        })
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#two").animate({ 
+                    right: '270px',
+                    opacity:'2',
+                    height:'225px'
+                })
+            })
+        })
+    </script>
     <style>
         div {
             width: 40%;
             font-size: x-large;
             color: gold;
             background-color: black;
+
+
+
             text-align: center;
             font-family: Times new roman;
             font-style: italic;
             font-weight: 400;
         }
 
-        img {
-            display: block;
+        #one {
+            display: inline;
+            float: left;
             width: 20%;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 10px;
+            margin-top: 10px;
+            position: absolute;
         }
-
-        body {
-            background: #74ebd5;
-            background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);
-            background: linear-gradient(to right, #ACB6E5, #74ebd5);
+        #two {
+            display: inline;
+            float: right;
+            width: 10%;
+            margin-right: 10px;
+            margin-top: 10px;
+            opacity: 0;
+            position: relative;
         }
     </style>
 
 </head>
 
 <body>
+    <button id="btn1">Animate Image</button>
     <p id="p1"
         style="text-align: center;font-family: times new roman;font-style: italic;font-size: x-large;font-weight:bolder;">
         Animate On Text</p>
     <div>
         jQuery is a fast, small, and feature-rich JavaScript library.
-    </div>
-    <p id="p2"
-        style="text-align: center;font-family: times new roman;font-style: italic;font-size: x-large;font-weight:bolder;">
-        Animate On Image</p>
-    <img src="">
+    </div><br>
+    <img id="one" src="asset\images-removebg-preview.png">
+    <img id="two" src="asset\police1-removebg-preview.png">
 </body>
 
 </html>
