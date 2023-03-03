@@ -24,18 +24,28 @@
             $("#btn1").click(function () {
                 $("#one").animate({ 
                     left: '550px',
-                    opacity: '0.5',
+                    opacity: '0.7',
                     height : '250px',
-                    width:'300px'
+                    width:'250px'
                 })
             })
         })
         $(document).ready(function () {
             $("#btn1").click(function () {
-                $("#two").animate({ 
-                    right: '270px',
-                    opacity:'2',
-                    height:'225px'
+                $("#two").animate({
+                    opacity:'1',
+                    height:'350px',
+                    width: '350px'
+                })
+            })
+        })
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#three").animate({ 
+                    right: '550px',
+                    opacity:'0.7',
+                    height:'250px',
+                    width: '250px'
                 })
             })
         })
@@ -56,21 +66,32 @@
         }
 
         #one {
-            display: inline;
+            display: block;
             float: left;
             width: 20%;
-            margin-left: 10px;
+            margin-left: 5px;
             margin-top: 10px;
             position: absolute;
         }
         #two {
             display: inline;
-            float: right;
-            width: 10%;
-            margin-right: 10px;
-            margin-top: 10px;
+            float: left;
+            width: 15%;
+            margin-left: 40%;
+            margin-top: 100px;
             opacity: 0;
+            position: static;
+        }
+        #three {
+            display: inline;
+            float: right;
+            width: 20%;
+            margin-left: 25%;
+            margin-top: 10px;
             position: relative;
+        }
+        body{
+            background-color: rgb(255, 251, 251);
         }
     </style>
 
@@ -84,8 +105,10 @@
     <div>
         jQuery is a fast, small, and feature-rich JavaScript library.
     </div><br>
-    <img id="one" src="asset\images-removebg-preview.png">
-    <img id="two" src="asset\police1-removebg-preview.png">
+    <img id="one" src="asset\tom-removebg-preview.png">
+    <img id="two" src="asset\tj-removebg-preview.png">
+    <img id="three" src="asset\PC_Jerry-removebg-preview.png">
+    <hr>
 </body>
 
 </html>
