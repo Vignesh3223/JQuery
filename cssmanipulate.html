@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css manipulation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                $("body").css({ background: 'pink' })
+            })
+        })
+        $(document).ready(function () {
+            $("#one").hover(function () {
+                $(this).animate({ 'zoom': 1.8 }, 400);
+                $("#one").css({background:'yellow'});
+            });
+        });
+        $(document).ready(function () {
+            $("img").hover(function () {
+                $(this).animate({ 'zoom': 1.6 });
+            });
+        });
+    </script>
+    <style>
+        body {
+            background: #f79d00;
+            background: -webkit-linear-gradient(to right, #64f38c, #f79d00);
+            background: linear-gradient(to right, #64f38c, #f79d00);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one">
+        <h1 id="head">
+            <center>jQuery</center>
+        </h1><br>
+        <p class="para1" style="background-color: rgb(250, 195, 128);"> Welcome to jQuery, jQuery is a JavaScript
+            library designed to simplify
+            HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax. It is free,
+            open-source software using the permissive MIT License</p><br><br>
+    </div><br>
+    <img src="asset\jquery.png" style="float: right; width: 500px; height: 300px;">
+    <button id="button1">Change CSS properties</button>
+</body>
+
+</html>
