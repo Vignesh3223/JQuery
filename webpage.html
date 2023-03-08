@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accordion and Autocomplete</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/Eggplant/jquery-ui.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -27,17 +27,27 @@
         var url1 = "asset/mob3-removebg-preview.png";
         $(document).ready(function () {
             $("#btn1").click(function () {
-                $(`<img src='${url1}'>`).appendTo("#tab1");
+                $(`<img src='${url1}'>`).appendTo(".mob");
             });
         });
         var url2 = "asset/lap3-removebg-preview.png";
         $(document).ready(function () {
             $("#btn2").click(function () {
-                $(`<img src='${url2}'>`).prependTo("#tab2");
+                $(`<img src='${url2}'>`).prependTo(".lap");
             });
         });
     </script>
     <style>
+        h1 {
+            font-family: serif;
+            font-size: x-large;
+            font-weight: bolder;
+            text-align: center;
+            text-decoration: underline;
+            color: rgb(250, 13, 250);
+
+        }
+
         #tab1 {
             margin-top: 5px;
             font-size: x-large;
@@ -55,6 +65,7 @@
             font-family: algerian;
             border-radius: 30px;
             width: 90%;
+            margin-top: 5px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -63,16 +74,23 @@
             width: 200px;
             height: 200px;
         }
+
+        body {
+            background: #EECDA3;
+            background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);
+            background: linear-gradient(to right, #EF629F, #EECDA3);
+
+        }
     </style>
 </head>
 
 <body>
-    
+    <h1>Mobile & Laptops</h1>
     <div id="tab1">
         <h1>
             <center>Mobile Phones</center>
         </h1>
-        <div>
+        <div class="mob">
             <img src="asset\mob1-removebg-preview.png" style="width: 100px;height: 150px;">
             <img src="asset\mob2-removebg-preview.png" style="width: 120px;height: 150px;">
         </div>
@@ -81,13 +99,18 @@
         <h1>
             <center>Laptops</center>
         </h1>
-        <div>
+        <div class="lap">
             <img src="asset\lap1-removebg-preview.png" style="width: 170px;height: 100px;">
             <img src="asset\lap2-removebg-preview.png" style="width: 250px;height: 150px;">
         </div>
     </div><br><br>
     <button id="btn1" style="float: left;">Append Mobiles</button>
     <button id="btn2" style="float: right;">Prepend Laptops</button>
+<br><br>
+<div class="prod">
+    <label for="search">Search : </label>
+    <input id="search">
+</div>
 </body>
 
 </html>
