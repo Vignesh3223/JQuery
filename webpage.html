@@ -8,6 +8,7 @@
     <title>Accordion and Autocomplete</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="https://code.jquery.com/ui/1.10.4/themes/Eggplant/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -34,6 +35,28 @@
         $(document).ready(function () {
             $("#btn2").click(function () {
                 $(`<img src='${url2}'>`).prependTo(".lap");
+            });
+        });
+        </script>
+        <script>
+        $(function(){
+            var products  =  [
+               "Apple",
+               "BLackberry",
+               "Dell",
+               "hp",
+               "Lenovo",
+               "Oppo",
+               "Vivo",
+               "Samsung",
+               "Redmi",
+               "One plus"
+            ];
+            $("#search").autocomplete
+            ({
+                source: products,
+                minlength : 1,
+                delay : 0
             });
         });
     </script>
@@ -106,11 +129,12 @@
     </div><br><br>
     <button id="btn1" style="float: left;">Append Mobiles</button>
     <button id="btn2" style="float: right;">Prepend Laptops</button>
-<br><br>
-<div class="prod">
-    <label for="search">Search : </label>
+<br><br><br>
+<div class="ui-widget">
+    <label for="search">Search: </label>
     <input id="search">
-</div>
+  </div>
+   
 </body>
 
 </html>
