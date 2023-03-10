@@ -1,53 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/Eggplant/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <title>jQuery-site</title>
     <script>
-        $(function(){
+        $(function () {
             $("#button1").button({
 
             })
         });
+        $(function () {
+            $("#menu").menu({
+                items: "> :not(.ui-widget-header)"
+            });
+        });
+        $(function () {
+            $("#tabs").tabs({
+                collapsible: true
+            });
+        });
     </script>
     <style>
-       #logo{
-        position: absolute;
-        float: left;
-        height: 50px;
-        width: 60px;
-        top:3px;
-        left:3px;
-       }
-       button{
-        position: absolute;
-        float: right;
-        right:10px;
-       }
+        #logo {
+            position: absolute;
+            float: left;
+            width: 50px;
+            height: 80px;
+            top: 5px;
+            left: 5px;
+        }
+
+        h1 {
+            color: rgb(247, 48, 48);
+            text-align: center;
+            font-family: algerian;
+            font-size: x-large;
+        }
+
+        button {
+            position: absolute;
+            float: right;
+            right: 10px;
+        }
+
+        #menu {
+            position: absolute;
+            float: left;
+            left: 5px;
+            top: 100px;
+            width: 200px;
+            padding: 2px;
+        }
+
+        #tabs {
+            width: 70%;
+            margin-top: 100px;
+            margin-left: 250px;
+        }
+
+        #tab1 img {
+            padding: 30px;
+        }
+
+        #tab2 img {
+            padding: 30px;
+        }
+
+        #tab3 img {
+            padding: 30px;
+        }
+
+        body {
+            background: #36D1DC;
+            background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
+            background: linear-gradient(to right, #5B86E5, #36D1DC);
+
+        }
     </style>
 </head>
+
 <body>
     <div class="one">
-        <img id="logo" src="asset/jquery.png">
-        <button type="button" id="button1" >Subscribe</button>
+        <img id="logo" src="asset/apple.webp">
+        <h1>Apple</h1>
+        <button type="button" id="button1">Subscribe</button>
         <ul id="menu">
-            <li class="ui-widget-header"><div>Interactions</div></li>
-            <li><div></div></li>
-            <li><div>Option 2</div></li>
-            <li><div>Option 3</div></li>
-            <li class="ui-widget-header"><div>Category 2</div></li>
-            <li><div>Option 4</div></li>
-            <li><div>Option 5</div></li>
-            <li><div>Option 6</div></li>
-          </ul>
-           
+            <li class="ui-widget-header">
+                <div>iPhone</div>
+            </li>
+            <li><div>iPhone 14</div>
+                <ul>
+            <li>
+                <div>iPhone 14 Pro Max</div>
+            </li>
+            <li>
+                <div>iPhone 14 Pro</div>
+            </li>
+            <li>
+                <div>iPhone 14 Plus</div>
+            </li>
+            </ul>
+            <li><div>iPhone 13</div>
+                <ul>
+            <li>
+                <div>iPhone 13 Pro Max</div>
+            </li>
+            <li>
+                <div>iPhone 13</div>
+            </li>
+            <li>
+                <div>iPhone 13 mini</div>
+            </li>
+           </ul>
+            <li class="ui-widget-header">
+                <div>Mac</div>
+            </li>
+            <li><div>MacBook Air</div>
+                <ul>
+            <li>
+                <div>MacBook Air (M1)</div>
+            </li>
+            <li>
+                <div>MacBook Air (M2)</div>
+            </li>
+            </ul>
+            <li><div>MacBook Pro</div>
+                <ul>
+            <li>
+                <div>MacBook Pro 13-in</div>
+            </li>
+            <li>
+                <div>MacBook Pro 14-in</div>
+            </li>
+            <li>
+                <div>MacBook Pro 16-in</div>
+            </li>
+            </ul>
+            <li><div>iMac</div>
+                <ul>
+            <li>
+                <div>iMac</div>
+            </li>
+            <li>
+                <div>iMac Pro</div>
+            </li>
+            </ul>
+        </ul>
     </div>
-
+    <div id="tabs">
+        <ul>
+            <li><a href="#tab1">iPhone 14</a></li>
+            <li><a href="#tab2">iPhone 13</a></li>
+            <li><a href="#tab3">MacBook Pro</a></li>
+        </ul>
+        <div id="tab1">
+            <img src="asset/iphone-14-pro-max.jpg" width="120px" height="150px">
+            <img src="asset/iPhone-14-Plus.jpg" width="150px" height="150px">
+            <img src="asset/iPhone-14.jfif" width="150px" height="150px">
+        </div>
+        <div id="tab2">
+            <img src="asset/iPhone-13-2.jpg" width="150px" height="150px">
+            <img src="asset/iphone-13-mini.jpg" width="150px" height="150px">
+            <img src="asset/iphone-13-pro-max.jfif" width="150px" height="150px">
+        </div>
+        <div id="tab3">
+            <img src="asset/13-inch.jpg" width="200px" height="150px">
+            <img src="asset/14-inch.jpg" width="200px" height="150px">
+            <img src="asset/16-inch.webp" width="200px" height="150px">
+        </div>
+    </div>
 </body>
+
 </html>
