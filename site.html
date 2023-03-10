@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>jQuery-site</title>
+    <script>
+        $(function(){
+            $("#button1").button({
+
+            })
+        });
+    </script>
+    <style>
+       #logo{
+        position: absolute;
+        float: left;
+        height: 50px;
+        width: 60px;
+        top:3px;
+        left:3px;
+       }
+       button{
+        position: absolute;
+        float: right;
+        right:10px;
+       }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <img id="logo" src="asset/jquery.png">
+        <button type="button" id="button1" >Subscribe</button>
+        <ul id="menu">
+            <li class="ui-widget-header"><div>Interactions</div></li>
+            <li><div></div></li>
+            <li><div>Option 2</div></li>
+            <li><div>Option 3</div></li>
+            <li class="ui-widget-header"><div>Category 2</div></li>
+            <li><div>Option 4</div></li>
+            <li><div>Option 5</div></li>
+            <li><div>Option 6</div></li>
+          </ul>
+           
+    </div>
+
+</body>
+</html>
