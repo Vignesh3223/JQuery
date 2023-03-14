@@ -26,6 +26,92 @@
                 collapsible: true
             });
         });
+        // $(function () {
+        //         $("#dialog-confirm").dialog({
+        //             resizable: false,
+        //             height: "auto",
+        //             width: 400,
+        //             modal: true,
+        //             buttons: {
+        //                 "Subscribe": function () {
+        //                     alert("You have subscribed to Apple!");
+        //                     $(this).dialog("close");
+        //                 }
+        //             }
+        //         }); 
+        //         $("#button1").click (function () {
+        //         $("#dialog-confirm").dialog("open");
+        //     });
+        // });
+        $(function () {
+            var progressTimer,
+                progressbar = $(".progressbar"),
+                progressLabel = $(".progress-label"),
+                dialogButtons = [{
+                    text: "Cancel Download",
+                    click: closeDownload
+                }],
+                dialog = $(".dialog").dialog({
+                    autoOpen: false,
+                    closeOnEscape: false,
+                    resizable: false,
+                    buttons: dialogButtons,
+                    open: function () {
+                        progressTimer = setTimeout(progress, 2000);
+                    },
+                    beforeClose: function () {
+                        downloadButton.button("option", {
+                            disabled: false,
+                            label: "Start Download"
+                        });
+                    }
+                }),
+                downloadButton = $(".downloadButton")
+                    .button()
+                    .on("click", function () {
+                        $(this).button("option", {
+                            disabled: true,
+                            label: "Downloading..."
+                        });
+                        dialog.dialog("open");
+                    });
+
+            progressbar.progressbar({
+                value: false,
+                change: function () {
+                    progressLabel.text("Current Progress: " + progressbar.progressbar("value") + "%");
+                },
+                complete: function () {
+                    progressLabel.text("Complete!");
+                    dialog.dialog("option", "buttons", [{
+                        text: "Close",
+                        click: closeDownload
+                    }]);
+                    $(".ui-dialog button").last().trigger("focus");
+                }
+            });
+
+            function progress() {
+                var val = progressbar.progressbar("value") || 0;
+
+                progressbar.progressbar("value", val + Math.floor(Math.random() * 3));
+
+                if (val <= 99) {
+                    progressTimer = setTimeout(progress, 50);
+                }
+            }
+
+            function closeDownload() {
+                clearTimeout(progressTimer);
+                dialog
+                    .dialog("option", "buttons", dialogButtons)
+                    .dialog("close");
+                progressbar.progressbar("value", false);
+                progressLabel
+                    .text("Starting download...");
+                downloadButton.trigger("focus");
+            }
+        });
     </script>
     <style>
         #logo {
@@ -58,11 +144,13 @@
             width: 150px;
             padding: 2px;
         }
-        ul{
+
+        ul {
             width: 200px;
         }
-        #index{
-            width:auto;
+
+        #index {
+            width: auto;
         }
 
         #tabs {
@@ -89,6 +177,19 @@
             background: linear-gradient(to right, #5B86E5, #36D1DC);
 
         }
+
+        #progressbar {
+            margin-top: 20px;
+        }
+
+        .progress-label {
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #fff;
+        }
+
+        .ui-dialog-titlebar-close {
+            display: none;
+        }
     </style>
 </head>
 
@@ -97,67 +198,80 @@
         <img id="logo" src="asset/apple.webp">
         <h1>Apple</h1>
         <button type="button" id="button1">Subscribe</button>
+        <!-- <div id="dialog-confirm" title="Confirm Email">
+            <span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>
+            E-mail : <input type="email" name="email">
+        </div> -->
+
+    </div>
+    </div>
+    <div class="two">
         <ul id="menu">
             <li class="ui-widget-header">
                 <div>iPhone</div>
             </li>
-            <li><div>iPhone 14</div>
+            <li>
+                <div>iPhone 14</div>
                 <ul>
-            <li>
-                <div>iPhone 14 Pro Max</div>
-            </li>
-            <li>
-                <div>iPhone 14 Pro</div>
-            </li>
-            <li>
-                <div>iPhone 14 Plus</div>
-            </li>
-            </ul>
-            <li><div>iPhone 13</div>
-                <ul>
-            <li>
-                <div>iPhone 13 Pro Max</div>
-            </li>
+                    <li>
+                        <div>iPhone 14 Pro Max</div>
+                    </li>
+                    <li>
+                        <div>iPhone 14 Pro</div>
+                    </li>
+                    <li>
+                        <div>iPhone 14 Plus</div>
+                    </li>
+                </ul>
             <li>
                 <div>iPhone 13</div>
-            </li>
-            <li>
-                <div>iPhone 13 mini</div>
-            </li>
-           </ul>
+                <ul>
+                    <li>
+                        <div>iPhone 13 Pro Max</div>
+                    </li>
+                    <li>
+                        <div>iPhone 13</div>
+                    </li>
+                    <li>
+                        <div>iPhone 13 mini</div>
+                    </li>
+                </ul>
             <li class="ui-widget-header">
                 <div>Mac</div>
             </li>
-            <li><div>MacBook Air</div>
+            <li>
+                <div>MacBook Air</div>
                 <ul>
+                    <li>
+                        <div>MacBook Air (M1)</div>
+                    </li>
+                    <li>
+                        <div>MacBook Air (M2)</div>
+                    </li>
+                </ul>
             <li>
-                <div>MacBook Air (M1)</div>
-            </li>
-            <li>
-                <div>MacBook Air (M2)</div>
-            </li>
-            </ul>
-            <li><div>MacBook Pro</div>
+                <div>MacBook Pro</div>
                 <ul>
-            <li>
-                <div>MacBook Pro 13-in</div>
-            </li>
-            <li>
-                <div>MacBook Pro 14-in</div>
-            </li>
-            <li>
-                <div>MacBook Pro 16-in</div>
-            </li>
-            </ul>
-            <li><div>iMac</div>
-                <ul>
+                    <li>
+                        <div>MacBook Pro 13-in</div>
+                    </li>
+                    <li>
+                        <div>MacBook Pro 14-in</div>
+                    </li>
+                    <li>
+                        <div>MacBook Pro 16-in</div>
+                    </li>
+                </ul>
             <li>
                 <div>iMac</div>
-            </li>
-            <li>
-                <div>iMac Pro</div>
-            </li>
-            </ul>
+                <ul>
+                    <li>
+                        <div>iMac</div>
+                    </li>
+                    <li>
+                        <div>iMac Pro</div>
+                    </li>
+                </ul>
         </ul>
     </div>
     <div id="tabs">
@@ -170,16 +284,31 @@
             <img src="asset/iphone-14-pro-max.jpg" width="120px" height="150px">
             <img src="asset/iPhone-14-Plus.jpg" width="150px" height="150px">
             <img src="asset/iPhone-14.jfif" width="150px" height="150px">
+            <div class="dialog" title="File Download">
+                <div class="progress-label">Starting download...</div>
+                <div class="progressbar"></div>
+            </div>
+            <button class="downloadButton">Start Download</button>
         </div>
         <div id="tab2">
             <img src="asset/iPhone-13-2.jpg" width="150px" height="150px">
             <img src="asset/iphone-13-mini.jpg" width="150px" height="150px">
             <img src="asset/iphone-13-pro-max.jfif" width="150px" height="150px">
+            <div class="dialog" title="File Download">
+                <div class="progress-label">Starting download...</div>
+                <div class="progressbar"></div>
+            </div>
+            <button class="downloadButton">Start Download</button>
         </div>
         <div id="tab3">
             <img src="asset/13-inch.jpg" width="200px" height="150px">
             <img src="asset/14-inch.jpg" width="200px" height="150px">
             <img src="asset/16-inch.webp" width="200px" height="150px">
+            <!-- <div id="dialog" title="File Download">
+                <div class="progress-label">Starting download...</div>
+                <div id="progressbar"></div>
+            </div>
+            <button id="downloadButton">Start Download</button> -->
         </div>
     </div>
 </body>
