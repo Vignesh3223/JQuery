@@ -26,23 +26,26 @@
                 collapsible: true
             });
         });
-        // $(function () {
-        //         $("#dialog-confirm").dialog({
-        //             resizable: false,
-        //             height: "auto",
-        //             width: 400,
-        //             modal: true,
-        //             buttons: {
-        //                 "Subscribe": function () {
-        //                     alert("You have subscribed to Apple!");
-        //                     $(this).dialog("close");
-        //                 }
-        //             }
-        //         }); 
-        //         $("#button1").click (function () {
-        //         $("#dialog-confirm").dialog("open");
-        //     });
-        // });
+        $(function () {
+            $(".button1").click(function () {
+                $(".dialog-confirm").dialog("open");
+            });
+        });
+        $(function () {
+            $(".dialog-confirm").dialog({
+                resizable: false,
+                height: "auto",
+                width: 400,
+                modal: true,
+                autoOpen: false,
+                buttons: {
+                    "Subscribe": function () {
+                        alert("You have subscribed to Apple!");
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        });
         $(function () {
             var progressTimer,
                 progressbar = $(".progressbar"),
@@ -124,7 +127,7 @@
         }
 
         h1 {
-            color: rgb(247, 48, 48);
+            color: #000000;
             text-align: center;
             font-family: algerian;
             font-size: x-large;
@@ -197,12 +200,11 @@
     <div class="one">
         <img id="logo" src="asset/apple.webp">
         <h1>Apple</h1>
-        <button type="button" id="button1">Subscribe</button>
-        <!-- <div id="dialog-confirm" title="Confirm Email">
+        <div class="dialog-confirm" title="Confirm Email">
             <span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>
             E-mail : <input type="email" name="email">
-        </div> -->
-
+        </div>
+        <button class="ui-button ui-widget ui-corner-all button1">Subscribe</button>
     </div>
     </div>
     <div class="two">
@@ -304,11 +306,11 @@
             <img src="asset/13-inch.jpg" width="200px" height="150px">
             <img src="asset/14-inch.jpg" width="200px" height="150px">
             <img src="asset/16-inch.webp" width="200px" height="150px">
-            <!-- <div id="dialog" title="File Download">
+            <div class="dialog" title="File Download">
                 <div class="progress-label">Starting download...</div>
-                <div id="progressbar"></div>
+                <div class="progressbar"></div>
             </div>
-            <button id="downloadButton">Start Download</button> -->
+            <button class="downloadButton">Start Download</button>
         </div>
     </div>
 </body>
