@@ -7,14 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <title>jquery validation</title>
-    <script>
-        $(document).ready(function () {
-            $(".login").submit(function (e) {
-                e.preventDefault();
-            });
-        })
-    </script>
     <style>
         form {
             font-family: 'Times New Roman';
@@ -55,7 +49,7 @@
 
 <body>
     <img src="asset/login.png">
-    <form name="form1" class="login" method="post" action="">
+    <form name="form1" class="login" method="post" action="https://jqueryui.com/">
         <center>Login Credentials</center>
         <hr><br>
         <div class="row">
@@ -76,6 +70,7 @@
         </div><br>
         <div class="row">
             <input class="button1" type="submit" value="Login">
+            <input class="button2" type="reset" value="Clear">
         </div><br>
     </form>
     <script>
@@ -85,11 +80,13 @@
                     'uname': {
                         required: true,
                         minlength: 2,
-                        maxlength: 15
+                        maxlength: 15,
+                        pattern : /^[A-Za-z]+$/
                     },
                     'mob': {
                         required: true,
-                        minlength: 10
+                        minlength: 10,
+                        pattern : /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/
                     },
                     'email': {
                         required: true,
@@ -98,7 +95,8 @@
                     'passwd': {
                         required: true,
                         minlength: 8,
-                        maxlength: 16
+                        maxlength: 16,
+                        pattern: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#@$])/
                     },
 
                 },
@@ -106,7 +104,7 @@
                     'uname': "<br> Please enter a valid Username.",
                     'mob': "<br> Please enter a valid Mobile number.",
                     'email': "<br> Please enter Email in proper format.",
-                    'passwd': "<br> Please enter a Password",
+                    'passwd': "<br> Please enter a valid Password",
                 }
             });
         });
