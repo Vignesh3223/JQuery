@@ -81,12 +81,12 @@
                         required: true,
                         minlength: 2,
                         maxlength: 15,
-                        pattern : /^[A-Za-z]+$/
+                        pattern: /^[A-Za-z]+$/
                     },
                     'mob': {
                         required: true,
                         minlength: 10,
-                        pattern : /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/
+                        pattern: /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/
                     },
                     'email': {
                         required: true,
@@ -101,10 +101,29 @@
 
                 },
                 messages: {
-                    'uname': "<br> Please enter a valid Username.",
-                    'mob': "<br> Please enter a valid Mobile number.",
-                    'email': "<br> Please enter Email in proper format.",
-                    'passwd': "<br> Please enter a valid Password",
+                    'uname': {
+                        required: "<br> Please enter a Username.",
+                        minlength: "<br> Username is too small",
+                        maxlength: "<br> Username is too large",
+                        pattern: "<br> Username must contain only alpabets"
+                    },
+                    'mob': {
+                        required: "<br> Please enter a valid Mobile number.",
+                        minlength: "<br> Mobile number must contain 10 digits",
+                        pattern: "<br> Mobile number must contain only digits"
+                    },
+
+                    'email': {
+                        required: "<br> Please enter Email in proper format.",
+                        email : "<br> E-mail address should be in proper format"
+                    },
+                    'passwd': {
+                        required:"<br> Please enter a valid Password",
+                        minlength: "<br> Password is too small",
+                        maxlength: "<br> Password is too large",
+                        pattern: "<br> Password must follow conditions"
+                    }
+
                 }
             });
         });
