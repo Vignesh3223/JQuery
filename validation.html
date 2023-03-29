@@ -52,26 +52,16 @@
     <form name="form1" class="login" method="post" action="https://jqueryui.com/">
         <center>Login Credentials</center>
         <hr><br>
-        <div class="row">
-            <label for="uname">Username</label>
-            <input id="uname" name="uname" type="text">
-        </div><br>
-        <div class="row">
-            <label for="mobile">Mobile number</label>
-            <input id="mob" name="mob" type="text">
-        </div><br>
-        <div class="row">
-            <label for="email">Email ID</label>
-            <input id="email" name="email" type="email">
-        </div><br>
-        <div class="row">
-            <label for="password">Password</label>
-            <input id="passwd" name="passwd" type="password">
-        </div><br>
-        <div class="row">
-            <input class="button1" type="submit" value="Login">
-            <input class="button2" type="reset" value="Clear">
-        </div><br>
+        <label for="uname">Username</label>
+        <input id="uname" name="uname" type="text"><br><br>
+        <label for="mobile">Mobile number</label>
+        <input id="mob" name="mob" type="text"><br><br>
+        <label for="email">Email ID</label>
+        <input id="email" name="email" type="email"><br><br>
+        <label for="password">Password</label>
+        <input id="passwd" name="passwd" type="password"><br><br>
+        <input class="button1" type="submit" value="Login">
+        <input class="button2" type="reset" value="Clear"><br><br>
     </form>
     <script>
         $(document).ready(function () {
@@ -110,15 +100,15 @@
                     'mob': {
                         required: "<br> Please enter a valid Mobile number.",
                         minlength: "<br> Mobile number must contain 10 digits",
-                        pattern: "<br> Mobile number must contain only digits"
+                        pattern: "<br> Mobile number must be in the format"
                     },
 
                     'email': {
                         required: "<br> Please enter Email in proper format.",
-                        email : "<br> E-mail address should be in proper format"
+                        email: "<br> E-mail address should be in proper format"
                     },
                     'passwd': {
-                        required:"<br> Please enter a valid Password",
+                        required: "<br> Please enter a valid Password",
                         minlength: "<br> Password is too small",
                         maxlength: "<br> Password is too large",
                         pattern: "<br> Password must follow conditions"
