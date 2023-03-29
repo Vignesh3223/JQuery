@@ -71,7 +71,7 @@
                         required: true,
                         minlength: 2,
                         maxlength: 15,
-                        pattern: /^[A-Za-z]+$/
+                        pattern: /^[A-Za-z ]+$/
                     },
                     'mob': {
                         required: true,
@@ -80,7 +80,8 @@
                     },
                     'email': {
                         required: true,
-                        email: true,
+                        email:true,
+                        pattern :/^[a-z0-9]+@[a-z]+\.[a-z]{2,4}$/
                     },
                     'passwd': {
                         required: true,
@@ -103,8 +104,9 @@
                     },
 
                     'email': {
-                        required: "<br> Please enter Email in proper format.",
-                        email: "<br> E-mail address should be in proper format"
+                        required: "<br> Please enter an Email address",
+                        email : "<br> Please enter a valid email address",
+                        pattern: "<br> E-mail address should be in proper format"
                     },
                     'passwd': {
                         required: "<br> Please enter a valid Password",
